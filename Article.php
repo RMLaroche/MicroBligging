@@ -66,4 +66,30 @@ function afficherTousArticle(){
 
 	echo $html;
 }
+
+function ajouterArticle(){
+
+	$html = '<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Ajouter un article</h4>
+        </div>
+        <form>
+        <div class="modal-body">
+          	<input class="form-group" name="titre" placeholder="Titre...">
+          	<input class="form-group" name="text" placeholder="Texte...">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Fermer</button>
+          <button type="submit" class="btn btn-success" onclick='ecrireArticle()' data-dismiss="modal">Ajouter</button>
+        </div>
+        </form>
+      </div>
+      
+    </div>
+  </div>';
+}
 ?>
