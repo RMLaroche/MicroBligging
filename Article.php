@@ -42,7 +42,16 @@ function ecrireArticle($titre_article, $texte_article, $auteur_id){
 
 function afficherArticle($article){
 
-	$html = "<div class='col-sm-12 container'> <div col-sm-12>" . $article->titre_article . "</div> <hr /> <div class='col-sm-12'> Date de création : ". $article->date_article  ."</div> <div class='col-sm-12'>".$article->texte_article."</div></div>"
+	$html = '<div class="card mb-4">
+          <div class="card-body">
+            <h2 class="card-title">'.$article->titre_article.'</h2>
+            <p class="card-text">'.$article->texte_article.'</p>
+          </div>
+          <div class="card-footer text-muted">
+            Posté le '.$article->date_article.' par
+            <a href="#">'.$article->auteur_prenom.' '.$article->auteur_nom.'</a>
+          </div>
+        </div>';
 
 	return $html;
 }
@@ -52,7 +61,7 @@ function afficherTousArticle(){
 	$html = "";
 	$articles = recupererArticles();
 	foreach ($articles as $key => $value) {
-		html .= afficherArticle($value);
+		$html .= afficherArticle($value);
 	}
 
 	echo $html;
