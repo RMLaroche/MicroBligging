@@ -1,7 +1,6 @@
 <?php
 
 require_once "config.php";
-$GLOBALS['db'] = $link;
 
 class Article {
 	public $id_article;
@@ -14,7 +13,7 @@ class Article {
 }
 function recupererArticles() {
 
-	$link = 	$GLOBALS['db'];
+	$link = $GLOBALS['db'];
 
      	$articles = array();
      	$sql = 'SELECT id_article, date_article, titre_article, texte_article, nom_utilisateur, prenom_utilisateur FROM `article` INNER JOIN utilisateur ON utilisateur.id_utilisateur = auteur_id';
@@ -26,13 +25,18 @@ function recupererArticles() {
 			$newarticle->titre_article = $row['titre_article'];
 			$newarticle->texte_article = $row['texte_article'];
 			$newarticle->auteur_nom = $row['nom_utilisateur'];
-			$newarticle->auteur_pre	nom = $row['prenom_utilisateur'];
+			$newarticle->auteur_prenom = $row['prenom_utilisateur'];
     		array_push($articles, $newarticle);
 		}
 		$link->close();
 		return $articles;
      }
 
- $Articles = recupererArticles();
- var_dump($Articles);
+function ecrireArticle($titre_article, $texte_article, $auteur_id){
+	$link = $GLOBALS['db'];
+	$sql = "INSERT INTO article (date_article, titre_article, texte_article, auteur_id) VALUES ('".date("Y-m-d")."', '".$titre_article."', '".$texte_article."', '".$auteur_id."')";
+	$res = $link->query($sql);
+	var_dump($res);
+	$link->close();	
+}
 ?>
