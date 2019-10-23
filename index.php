@@ -1,4 +1,4 @@
-<?php include('Article.php') ?>
+<?php include('Article.php'); ?>
 
 <!DOCTYPE html>
 <html>
@@ -30,7 +30,7 @@
 
 <div class="row col-sm-12" style="margin-top: 80px;">
   <div class="col-sm-2" style="margin-left: 0px;">
-  <button type="button" class="btn btn-primary col-sm-12"> Ecrire un article</button>
+  <a type="button" class="btn btn-primary col-sm-12" href="ecrireArticle.php"> Ecrire un article</a>
   <button type="button" class="btn btn-secondary col-sm-12" style="margin-top: 5px;"> A la une</button>
   <button type="button" class="btn btn-secondary col-sm-12" style="margin-top: 5px;"> Dernières nouvelles</button>
   <button type="button" class="btn btn-secondary col-sm-12" onclick="getArticle()" style="margin-top: 5px;"> Articles enregistrés</button>
@@ -40,6 +40,7 @@
   </div>
 </div>
 
+	
 
 	<script src="index.js"></script>
 	<script src="Article.php"></script>
