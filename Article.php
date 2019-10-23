@@ -39,4 +39,22 @@ function ecrireArticle($titre_article, $texte_article, $auteur_id){
 	var_dump($res);
 	$link->close();	
 }
+
+function afficherArticle($article){
+
+	$html = "<div class='col-sm-12 container'> <div col-sm-12>" . $article->titre_article . "</div> <hr /> <div class='col-sm-12'> Date de création : ". $article->date_article  ."</div> <div class='col-sm-12'>".$article->texte_article."</div></div>"
+
+	return $html;
+}
+
+function afficherTousArticle(){
+
+	$html = "";
+	$articles = recupererArticles();
+	foreach ($articles as $key => $value) {
+		html .= afficherArticle($value);
+	}
+
+	echo $html;
+}
 ?>
