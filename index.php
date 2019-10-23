@@ -31,9 +31,9 @@
 <div class="row col-sm-12" style="margin-top: 80px;">
   <div class="col-sm-2" style="margin-left: 0px;">
   <button type="button" class="btn btn-primary col-sm-12"> Ecrire un article</button>
-  <button type="button" class="btn btn-primary col-sm-12" style="margin-top: 5px;"> A la une</button>
-  <button type="button" class="btn btn-primary col-sm-12" style="margin-top: 5px;"> Dernières nouvelles</button>
-  <button type="button" class="btn btn-primary col-sm-12" onclick="getArticle()" style="margin-top: 5px;"> Articles enregistrés</button>
+  <button type="button" class="btn btn-secondary col-sm-12" style="margin-top: 5px;"> A la une</button>
+  <button type="button" class="btn btn-secondary col-sm-12" style="margin-top: 5px;"> Dernières nouvelles</button>
+  <button type="button" class="btn btn-secondary col-sm-12" onclick="getArticle()" style="margin-top: 5px;"> Articles enregistrés</button>
   </div>
   <div class="col-sm-8 offset-sm-2">
   	<?php afficherTousArticle(); ?>
